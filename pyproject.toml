@@ -1,0 +1,75 @@
+[project]
+name = "dracula-nocturne"
+version = "0.1.0"
+description = "Dracula on near-black: one palette, themes for terminals, editors, prompts and the browser."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE", "src/nocturne/data/LICENSE-pierre-dark"]
+authors = [{ name = "ArchitektApx" }]
+requires-python = ">=3.12"
+dependencies = []
+keywords = ["dracula", "theme", "colorscheme", "terminal", "dotfiles"]
+classifiers = [
+    "Environment :: Console",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/ArchitektApx/dracula-nocturne"
+
+[project.scripts]
+nocturne = "nocturne.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.17", "pyright>=1.1.400", "pyyaml>=6"]
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nocturne"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+extend-exclude = ["themes"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D",        # docstrings where they help, not on every function
+    "COM812",   # trailing commas: left to the formatter
+    "T201",     # print: it's a CLI
+    "S603",     # subprocess on fixed argument lists
+    "S607",     # tools (bat) are looked up on PATH on purpose
+    "FBT001",   # boolean parameters
+    "FBT002",
+    "EM101",    # exception messages inline
+    "EM102",
+    "TRY003",
+    "CPY001",   # one LICENSE file, no per-file headers
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "PLR2004", "ANN", "INP001", "SLF001"]
+"tools/*" = ["INP001", "PLR2004", "ANN", "T20", "PTH"]
+# HTML, CSS and shell commands, which read better on one line
+"tools/screenshots/*" = ["INP001", "PLR2004", "T20", "E501"]
+# the VS Code colour table is long by nature
+"src/nocturne/apps/vscode/__init__.py" = ["E501"]
+
+[tool.ruff.format]
+line-ending = "lf"
+
+[tool.pyright]
+include = ["src", "tests"]
+strict = ["src"]
+pythonVersion = "3.12"

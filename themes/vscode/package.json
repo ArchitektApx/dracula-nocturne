@@ -1,0 +1,27 @@
+{
+  "name": "dracula-nocturne",
+  "displayName": "Dracula Nocturne",
+  "description": "Dracula on near-black, generated from palette.toml",
+  "version": "0.1.0",
+  "publisher": "ArchitektApx",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArchitektApx/dracula-nocturne"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Dracula Nocturne",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dracula-nocturne-color-theme.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="214" viewBox="0 0 880 214">
+  <defs>
+    <linearGradient id="name" gradientUnits="userSpaceOnUse" x1="450" x2="680"><stop offset="0" stop-color="#bd93f9"/><stop offset="1" stop-color="#ff79c6"/></linearGradient>
+    <radialGradient id="glow1" cx="12%" cy="0%" r="60%"><stop offset="0" stop-color="#bd93f9" stop-opacity=".2"/><stop offset="1" stop-color="#bd93f9" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glow2" cx="100%" cy="100%" r="60%"><stop offset="0" stop-color="#ff79c6" stop-opacity=".15"/><stop offset="1" stop-color="#ff79c6" stop-opacity="0"/></radialGradient>
+    <linearGradient id="border" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bd93f9"/><stop offset="1" stop-color="#ff79c6"/></linearGradient>
+    <clipPath id="card"><rect width="880" height="214" rx="20"/></clipPath>
+    <clipPath id="bar"><rect x="70" y="152" width="740" height="14" rx="7.0"/></clipPath>
+  </defs>
+  <g clip-path="url(#card)">
+    <rect width="880" height="214" fill="#0a0a0a"/>
+    <rect width="880" height="214" fill="url(#glow1)"/>
+    <rect width="880" height="214" fill="url(#glow2)"/>
+  </g>
+  <text x="50%" y="88" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="52" font-weight="800" letter-spacing="-1.5"><tspan fill="#f8f8f2">Dracula </tspan><tspan fill="url(#name)">Nocturne</tspan></text>
+  <text x="50%" y="124" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="19" fill="#6272a4">Dracula, but later at night</text>
+  <g clip-path="url(#bar)"><rect x="70.0" y="152" width="62.2" height="14" fill="#0a0a0a"><title>bg #0a0a0a</title></rect><rect x="131.7" y="152" width="62.2" height="14" fill="#21222c"><title>surface #21222c</title></rect><rect x="193.3" y="152" width="62.2" height="14" fill="#35374a"><title>selection #35374a</title></rect><rect x="255.0" y="152" width="62.2" height="14" fill="#6272a4"><title>comment #6272a4</title></rect><rect x="316.7" y="152" width="62.2" height="14" fill="#f8f8f2"><title>fg #f8f8f2</title></rect><rect x="378.3" y="152" width="62.2" height="14" fill="#bd93f9"><title>purple #bd93f9</title></rect><rect x="440.0" y="152" width="62.2" height="14" fill="#ff79c6"><title>pink #ff79c6</title></rect><rect x="501.7" y="152" width="62.2" height="14" fill="#8be9fd"><title>cyan #8be9fd</title></rect><rect x="563.3" y="152" width="62.2" height="14" fill="#50fa7b"><title>green #50fa7b</title></rect><rect x="625.0" y="152" width="62.2" height="14" fill="#f1fa8c"><title>yellow #f1fa8c</title></rect><rect x="686.7" y="152" width="62.2" height="14" fill="#ffb86c"><title>orange #ffb86c</title></rect><rect x="748.3" y="152" width="62.2" height="14" fill="#ff5555"><title>red #ff5555</title></rect></g>
+  <rect x="70" y="152" width="740" height="14" rx="7.0" fill="none" stroke="url(#border)" stroke-width="1.5"/>
+</svg>

@@ -1,0 +1,171 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 4,
+  "final_space": true,
+  "console_title_template": "{{ .Shell }} in {{ .Folder }}",
+  "palette": {
+    "bg": "{{bg}}",
+    "tile": "{{surface}}",
+    "comment": "{{comment}}",
+    "fg": "{{fg}}",
+    "white": "{{fg_dim}}",
+    "purple": "{{purple}}",
+    "pink": "{{pink}}",
+    "green": "{{green}}",
+    "orange": "{{orange}}",
+    "yellow": "{{yellow}}",
+    "cyan": "{{cyan}}",
+    "red": "{{red}}"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "background": "p:pink",
+          "foreground": "p:bg",
+          "template": " \uf489 {{ .Shell }} "
+        },
+        {
+          "type": "path",
+          "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "background": "p:purple",
+          "foreground": "p:tile",
+          "options": {
+            "style": "folder",
+            "home_icon": "~"
+          },
+          "template": " {{ $p := .PWD }}{{ if regexMatch \"^~/(Developer|Development|Projects|projects|code|src|dev)(/|$)\" $p }}\uf121{{ else if or (eq $p \"~/Downloads\") (hasPrefix \"~/Downloads/\" $p) }}\uf019{{ else if or (eq $p \"~/Documents\") (hasPrefix \"~/Documents/\" $p) }}\uf15c{{ else if or (eq $p \"~/Desktop\") (hasPrefix \"~/Desktop/\" $p) }}\uf108{{ else if or (eq $p \"~/Pictures\") (hasPrefix \"~/Pictures/\" $p) }}\uf03e{{ else if or (eq $p \"~/Music\") (hasPrefix \"~/Music/\" $p) }}\uf001{{ else if or (eq $p \"~/.config\") (hasPrefix \"~/.config/\" $p) }}\uf013{{ else if eq $p \"~\" }}\uf015{{ else }}\uf07c{{ end }} {{ .Parent }}<b><p:bg>{{ .Path }}</></b> "
+        },
+        {
+          "type": "git",
+          "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "background": "p:tile",
+          "foreground": "p:green",
+          "options": {
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "branch_icon": "\uf126 "
+          },
+          "template": " {{ if .UpstreamIcon }}{{ .UpstreamIcon }} {{ end }}{{ .HEAD }}{{ if gt .Ahead 0 }} <p:green>\u21e1{{ .Ahead }}</>{{ end }}{{ if gt .Behind 0 }} <p:green>\u21e3{{ .Behind }}</>{{ end }}{{ if gt .Staging.Added 0 }} <p:orange>+{{ .Staging.Added }}</>{{ end }}{{ if gt (add .Working.Modified .Working.Deleted) 0 }} <p:orange>!{{ add .Working.Modified .Working.Deleted }}</>{{ end }}{{ if gt .Working.Untracked 0 }} <p:cyan>?{{ .Working.Untracked }}</>{{ end }}{{ if gt .Working.Unmerged 0 }} <p:red>~{{ .Working.Unmerged }}</>{{ end }} "
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "status",
+          "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "background": "p:tile",
+          "foreground": "p:red",
+          "template": " \u2718 {{ if eq .Code 127 }}127 not found{{ else if eq .Code 126 }}126 no permission{{ else if gt .Code 128 }}{{ trimPrefix \"SIG\" (reason .Code) }}{{ else }}{{ .Code }}{{ end }} "
+        },
+        {
+          "type": "executiontime",
+          "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "background": "p:tile",
+          "foreground": "p:yellow",
+          "options": {
+            "threshold": 3000,
+            "style": "round"
+          },
+          "template": " \uf252 {{ .FormattedMs }} "
+        },
+        {
+          "type": "node",
+          "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "background": "p:tile",
+          "foreground": "p:green",
+          "options": {
+            "fetch_version": true
+          },
+          "template": " \ue718 {{ .Full }} "
+        },
+        {
+          "type": "python",
+          "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "background": "p:tile",
+          "foreground": "p:cyan",
+          "options": {
+            "display_mode": "files",
+            "fetch_virtual_env": true
+          },
+          "template": " \ue73c {{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }} "
+        },
+        {
+          "type": "go",
+          "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "background": "p:tile",
+          "foreground": "p:cyan",
+          "template": " \ue627 {{ .Full }} "
+        },
+        {
+          "type": "battery",
+          "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "background": "p:tile",
+          "foreground": "p:red",
+          "template": "{{ if and (eq \"Discharging\" .State.String) (lt .Percentage 20) }} \udb80\udc7a {{ .Percentage }}% {{ end }}"
+        },
+        {
+          "type": "time",
+          "style": "diamond",
+          "leading_diamond": " \ue0b6",
+          "trailing_diamond": "\ue0b4",
+          "background": "p:tile",
+          "foreground": "p:white",
+          "options": {
+            "time_format": "15:04:05"
+          },
+          "template": " \uf017 {{ .CurrentDate | date .Format }} "
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "p:purple",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}p:red{{ end }}"
+          ],
+          "template": "\u276f"
+        }
+      ]
+    }
+  ],
+  "transient_prompt": {
+    "foreground": "p:purple",
+    "foreground_templates": [
+      "{{ if gt .Code 0 }}p:red{{ end }}"
+    ],
+    "template": "\u276f "
+  }
+}

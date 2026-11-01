@@ -1,0 +1,15 @@
+#!/bin/bash
+# Dracula Nocturne for JankyBorders (macOS). Generated from palette.toml by `nocturne build`: edit that, not this.
+#
+# A purple-to-pink gradient around the focused window, like the prompt tiles. borders runs it as
+# ~/.config/borders/bordersrc when it starts without arguments.
+
+options=(
+	style=round
+	width=5.0
+	hidpi=off
+	active_color="gradient(top_left=0xffbd93f9,bottom_right=0xffff79c6)"
+	inactive_color=0x00000000
+)
+
+borders "${options[@]}"

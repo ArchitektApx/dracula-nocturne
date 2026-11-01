@@ -1,0 +1,92 @@
+# Dracula Nocturne for eza. Generated from palette.toml by `nocturne build`: edit that, not this.
+filekinds:
+  normal: {foreground: "#f8f8f2"}
+  directory: {foreground: "#bd93f9", is_bold: true}
+  symlink: {foreground: "#8be9fd"}
+  pipe: {foreground: "#f1fa8c"}
+  block_device: {foreground: "#ffb86c"}
+  char_device: {foreground: "#ffb86c"}
+  socket: {foreground: "#ff79c6"}
+  special: {foreground: "#ff79c6"}
+  executable: {foreground: "#50fa7b", is_bold: true}
+  mount_point: {foreground: "#8be9fd", is_bold: true}
+
+perms:
+  user_read: {foreground: "#f1fa8c"}
+  user_write: {foreground: "#ff5555"}
+  user_execute_file: {foreground: "#50fa7b"}
+  user_execute_other: {foreground: "#50fa7b"}
+  group_read: {foreground: "#f1fa8c", is_dimmed: true}
+  group_write: {foreground: "#ff5555", is_dimmed: true}
+  group_execute: {foreground: "#50fa7b", is_dimmed: true}
+  other_read: {foreground: "#6272a4"}
+  other_write: {foreground: "#6272a4"}
+  other_execute: {foreground: "#6272a4"}
+  special_user_file: {foreground: "#ff79c6"}
+  special_other: {foreground: "#ff79c6"}
+  attribute: {foreground: "#6272a4"}
+
+size:
+  major: {foreground: "#8be9fd"}
+  minor: {foreground: "#8be9fd"}
+  number_byte: {foreground: "#f8f8f2"}
+  number_kilo: {foreground: "#8be9fd"}
+  number_mega: {foreground: "#bd93f9"}
+  number_giga: {foreground: "#ff79c6"}
+  number_huge: {foreground: "#ff5555"}
+  unit_byte: {foreground: "#6272a4"}
+  unit_kilo: {foreground: "#6272a4"}
+  unit_mega: {foreground: "#6272a4"}
+  unit_giga: {foreground: "#6272a4"}
+  unit_huge: {foreground: "#6272a4"}
+
+users:
+  user_you: {foreground: "#ff79c6"}
+  user_root: {foreground: "#ff5555", is_bold: true}
+  user_other: {foreground: "#6272a4"}
+  group_yours: {foreground: "#bd93f9"}
+  group_other: {foreground: "#6272a4"}
+  group_root: {foreground: "#ff5555"}
+
+links:
+  normal: {foreground: "#8be9fd"}
+  multi_link_file: {foreground: "#ffb86c"}
+
+git:
+  new: {foreground: "#50fa7b"}
+  modified: {foreground: "#ffb86c"}
+  deleted: {foreground: "#ff5555"}
+  renamed: {foreground: "#8be9fd"}
+  typechange: {foreground: "#ff79c6"}
+  ignored: {foreground: "#6272a4"}
+  conflicted: {foreground: "#ff5555", is_bold: true}
+
+git_repo:
+  branch_main: {foreground: "#50fa7b"}
+  branch_other: {foreground: "#ff79c6"}
+  git_clean: {foreground: "#50fa7b"}
+  git_dirty: {foreground: "#ffb86c"}
+
+file_type:
+  image: {foreground: "#ff79c6"}
+  video: {foreground: "#ff79c6"}
+  music: {foreground: "#8be9fd"}
+  lossless: {foreground: "#8be9fd"}
+  crypto: {foreground: "#50fa7b"}
+  document: {foreground: "#f1fa8c"}
+  compressed: {foreground: "#ffb86c"}
+  temp: {foreground: "#6272a4"}
+  compiled: {foreground: "#6272a4"}
+  build: {foreground: "#f1fa8c", is_underline: true}
+  source: {foreground: "#f1fa8c"}
+
+punctuation: {foreground: "#6272a4"}
+date: {foreground: "#8be9fd"}
+inode: {foreground: "#6272a4"}
+blocks: {foreground: "#6272a4"}
+header: {foreground: "#bd93f9", is_underline: true}
+octal: {foreground: "#ff79c6"}
+flags: {foreground: "#6272a4"}
+control_char: {foreground: "#ff5555"}
+broken_symlink: {foreground: "#ff5555", is_underline: true}
+broken_path_overlay: {is_underline: true}

@@ -1,0 +1,28 @@
+{
+  "profiles": [
+    {
+      "updates": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+      "font": {
+        "face": "MesloLGS Nerd Font Mono"
+      }
+    },
+    {
+      "updates": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+      "font": {
+        "face": "MesloLGS Nerd Font Mono"
+      }
+    },
+    {
+      "updates": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+      "font": {
+        "face": "MesloLGS Nerd Font Mono"
+      }
+    },
+    {
+      "updates": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+      "font": {
+        "face": "MesloLGS Nerd Font Mono"
+      }
+    }
+  ]
+}

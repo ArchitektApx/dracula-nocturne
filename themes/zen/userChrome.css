@@ -1,0 +1,84 @@
+@import "sine-mods/Arc-2.0/userChrome.css";
+
+/* Dracula Nocturne for Zen. Generated from palette.toml by `nocturne build`: edit that, not this.
+ *
+ * Purple-to-pink halos on the selected tab, the URL bar popup and the find bar, on top of the
+ * Arc 2.0 and Better Find Bar mods (installed with Sine), whose @import has to stay first.
+ * `nocturne install zen --level full` links it into <Zen profile>/chrome/; restart Zen after. */
+
+/* Selected tab: a purple-to-pink halo, like the JankyBorders window border.
+ * Container tabs keep their container colour. */
+.tabbrowser-tab:not([usercontextid]):is([selected], [multiselected]) .tab-background {
+  position: relative !important;
+  background: rgb(189 147 249 / 0.10) !important;
+  box-shadow: 0 0 10px -3px rgb(189 147 249 / 0.5) !important;
+}
+.tabbrowser-tab:not([usercontextid]):is([selected], [multiselected]) .tab-background::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 2px !important;
+  border-radius: inherit !important;
+  background: linear-gradient(135deg, #bd93f9, #ff79c6) !important;
+  /* gradient only on the 2px edge: content box is masked out */
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) !important;
+  mask-composite: exclude !important;
+  pointer-events: none !important;
+}
+
+/* URL bar popup: the same halo. Arc puts Zen's dark underlay under the blur, which turns the
+ * popup opaque on transparent pages, so the underlay goes; tint and blur still come from Arc's
+ * settings (arc-urlbar-bg / -blur / -saturate). */
+/* :root raises specificity: Arc's stylesheet loads again after this file, so equal selectors would lose. */
+:root #urlbar[open] .urlbar-background {
+  backdrop-filter: blur(var(--arc-urlbar-blur, 25px)) saturate(var(--arc-urlbar-saturate, 1)) !important;
+  box-shadow: 0 0 12px -6px rgb(189 147 249 / 0.35) !important;
+}
+:root #urlbar[open] .urlbar-background::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  padding: 1.5px !important;
+  border-radius: inherit !important;
+  background: linear-gradient(135deg, #bd93f9, #ff79c6) !important;
+  opacity: 0.7 !important;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) !important;
+  mask-composite: exclude !important;
+  pointer-events: none !important;
+}
+
+/* No separator line between the URL bar and its results: Arc rounds the results box, which bends
+ * Firefox's straight separator at both ends. */
+:root #urlbar-results {
+  --urlbarview-separator-color: transparent !important;
+}
+
+/* Find bar: purple checkmarks, a purple ring on the field and the same halo. Works with Zen's own
+ * find bar and with the Better Find Bar mod (the extra selectors keep these above the mod's). */
+:root findbar checkbox {
+  accent-color: #bd93f9 !important; /* Firefox's accent colour, which can be grey */
+}
+:root findbar .findbar-container .findbar-textbox {
+  border: 1px solid #35374a !important; /* the mod mixes #f8f8f2 into it, which reads yellowish */
+}
+:root findbar .findbar-container .findbar-textbox:focus {
+  outline: 1px solid rgb(189 147 249 / 0.6) !important;
+  outline-offset: -1px !important;
+}
+:root findbar {
+  border-color: transparent !important; /* replaced by the ring below */
+}
+:root findbar::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  padding: 1.5px !important;
+  border-radius: inherit !important;
+  background: linear-gradient(135deg, #bd93f9, #ff79c6) !important;
+  opacity: 0.7 !important;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) !important;
+  mask-composite: exclude !important;
+  pointer-events: none !important;
+}

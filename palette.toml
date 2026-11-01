@@ -1,0 +1,143 @@
+# Dracula Nocturne: the Dracula accents on a near-black base.
+#
+# Every file in themes/ is generated from this one. Change a colour here, then run
+# `nocturne build`. Templates refer to colours by name: `{{purple}}`, `{{bright.red}}`,
+# `{{syntax.string}}`, `{{ui.canvas}}`, optionally with a format: `{{purple|rgb}}`.
+
+name = "Dracula Nocturne"
+
+# The base: backgrounds from darkest to lightest, then text.
+[base]
+bg = "#0a0a0a"          # terminal and window background
+surface = "#21222c"     # tiles, inactive tabs, menus, status bars (Dracula's darker background)
+selection = "#35374a"   # selected text and rows
+line = "#44475a"        # Dracula's current line: dim text on tiles, search matches
+comment = "#6272a4"     # secondary text, borders, hints
+fg = "#f8f8f2"
+fg_dim = "#e2e4f0"      # text on tiles that shouldn't be pure fg
+white = "#ffffff"
+
+[accent]
+purple = "#bd93f9"      # the main accent: borders, directories, active things
+pink = "#ff79c6"        # the second accent: cursor, current tab, matches
+cyan = "#8be9fd"
+green = "#50fa7b"
+yellow = "#f1fa8c"
+orange = "#ffb86c"
+red = "#ff5555"
+
+[bright]
+purple = "#d6acff"
+pink = "#ff92df"
+cyan = "#a4ffff"
+green = "#69ff94"
+yellow = "#ffffa5"
+red = "#ff6e6e"
+
+# Accent-tinted backgrounds for highlighted rows (completion menus, sidebars).
+[tint]
+purple = "#2a2338"
+cyan = "#1f2a33"
+
+# The 16 terminal colours, by name. Colour 0 is the surface, so "black" text on the
+# near-black background stays readable.
+[ansi]
+colors = [
+    "surface", "red", "green", "yellow", "purple", "pink", "cyan", "fg",
+    "comment", "bright.red", "bright.green", "bright.yellow", "bright.purple", "bright.pink", "bright.cyan", "white",
+]
+
+# Code: the syntax colours of Pierre Dark. VS Code, bat and yazi use Pierre's token rules
+# (src/nocturne/data/pierre-dark.json) with these colours swapped in; Neovim maps them to its groups.
+[syntax]
+text = "#fafafa"        # plain code
+comment = "#737373"
+string = "#5ecc71"
+regexp = "#64d1db"
+escape = "#61d5c0"
+number = "#68cdf2"
+constant = "#ffd452"
+keyword = "#ff678d"
+operator = "#636363"
+func = "#9d6afb"
+type = "#d568ea"
+variable = "#ffa359"
+parameter = "#a3a3a3"
+builtin = "#ffab16"     # namespaces, this/self, standard library
+enum_member = "#08c0ef"
+decorator = "#69b1ff"
+tag = "#ff855e"
+attribute = "#60d199"
+
+# Editors (Neovim, VS Code, bat): a slightly raised background for code, the current line, and
+# line numbers at about 30% / 78% of fg.
+[editor]
+bg = "#111111"
+line_highlight = "#131313"
+line_nr = "#575756"
+line_nr_active = "#c5c5c2"
+
+# Window chrome: the full T3 Code theme (every role of T3's theme editor), which the VS Code
+# theme takes its sidebars, toolbars, inputs and panels from.
+[ui]
+canvas = "#0a0a0a"
+chrome = "#0a0a0a"
+toolbar = "#0a0a0a"
+toolbarBorder = "#191919"
+toolbarForeground = "#f8f8f2"
+toolbarControl = "#111111"
+toolbarControlForeground = "#f8f8f2"
+toolbarControlHover = "#141414"
+surface = "#111111"
+surfaceRaised = "#111111"
+surfaceOverlay = "#111111"
+secondary = "#111111"
+secondaryForeground = "#f8f8f2"
+muted = "#111111"
+mutedForeground = "#7c82a3"
+codeBackground = "#111111"
+codeForeground = "#f8f8f2"
+sidebar = "#000000"
+sidebarMutedForeground = "#a0a5bf"
+sidebarForeground = "#f8f8f2"
+sidebarControlSurface = "#0a0a0a"
+sidebarBorder = "#141414"
+sidebarRowHover = "#131313"
+sidebarRowActive = "#191320"
+sidebarRowSelected = "#111111"
+border = "#191919"
+input = "#1e1e1e"
+text = "#f8f8f2"
+textMuted = "#7c82a3"
+placeholder = "#7c82a3"
+iconMuted = "#7c82a3"
+secondaryLabel = "#7c82a3"
+focus = "#bd93f9"
+accent = "#bd93f9"
+accentForeground = "#0a0a0a"
+accentSurface = "#1a1620"
+accentSurfaceForeground = "#f8f8f2"
+messageActionHover = "#a982f2"
+messageSurface = "#141414"
+messageForeground = "#f8f8f2"
+messageAction = "#bd93f9"
+messageActionForeground = "#0a0a0a"
+error = "#ff5555"
+errorForeground = "#ff7b7b"
+errorSurface = "#2c1515"
+warning = "#ffb86c"
+warningForeground = "#ffc98f"
+warningSurface = "#271f16"
+update = "#8be9fd"
+updateForeground = "#a8effd"
+updateSurface = "#192527"
+searchMatchBackground = "#8c6c1f"
+searchMatchActiveBackground = "#eea52b"
+searchMatchForeground = "#f5f5f5"
+searchMatchActiveForeground = "#21180a"
+terminalBackground = "#0a0a0a"
+terminalForeground = "#f8f8f2"
+terminalCursor = "#ff79c6"
+terminalSelection = "#35374a"
+terminalScrollbar = "#222222"
+terminalScrollbarHover = "#363636"

@@ -1,0 +1,45 @@
+{
+  "profiles": [
+    {
+      "updates": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+      "colorScheme": "Dracula Nocturne"
+    },
+    {
+      "updates": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+      "colorScheme": "Dracula Nocturne"
+    },
+    {
+      "updates": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+      "colorScheme": "Dracula Nocturne"
+    },
+    {
+      "updates": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+      "colorScheme": "Dracula Nocturne"
+    }
+  ],
+  "schemes": [
+    {
+      "name": "Dracula Nocturne",
+      "background": "#0a0a0a",
+      "foreground": "#f8f8f2",
+      "cursorColor": "#ff79c6",
+      "selectionBackground": "#35374a",
+      "black": "#21222c",
+      "red": "#ff5555",
+      "green": "#50fa7b",
+      "yellow": "#f1fa8c",
+      "blue": "#bd93f9",
+      "purple": "#ff79c6",
+      "cyan": "#8be9fd",
+      "white": "#f8f8f2",
+      "brightBlack": "#6272a4",
+      "brightRed": "#ff6e6e",
+      "brightGreen": "#69ff94",
+      "brightYellow": "#ffffa5",
+      "brightBlue": "#d6acff",
+      "brightPurple": "#ff92df",
+      "brightCyan": "#a4ffff",
+      "brightWhite": "#ffffff"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+# Dracula Nocturne for yazi. Generated from palette.toml by `nocturne build`: edit that, not this.
+#
+# Link or copy this folder to ~/.config/yazi/flavors/, then in ~/.config/yazi/theme.toml:
+#   [flavor]
+#   dark = "dracula-nocturne"
+#
+# File colours match the eza theme and LS_COLORS. Code previews use tmtheme.xml (the bat theme).
+
+[mgr]
+cwd = { fg = "{{cyan}}" }
+
+find_keyword  = { fg = "{{yellow}}", bold = true, underline = true }
+find_position = { fg = "{{pink}}", bg = "reset", bold = true }
+
+marker_copied   = { fg = "{{green}}", bg = "{{green}}" }
+marker_cut      = { fg = "{{red}}", bg = "{{red}}" }
+marker_marked   = { fg = "{{cyan}}", bg = "{{cyan}}" }
+marker_selected = { fg = "{{pink}}", bg = "{{pink}}" }
+
+count_copied   = { fg = "{{bg}}", bg = "{{green}}" }
+count_cut      = { fg = "{{bg}}", bg = "{{red}}" }
+count_selected = { fg = "{{bg}}", bg = "{{pink}}" }
+
+border_symbol = "│"
+border_style  = { fg = "{{surface}}" }
+
+[indicator]
+parent  = { reversed = true }
+current = { bg = "{{selection}}" }
+preview = { underline = true }
+
+# Tabs and modes as pills, like the tmux tabs: pink for the current one, surface for the rest
+[tabs]
+active   = { fg = "{{bg}}", bg = "{{pink}}", bold = true }
+inactive = { fg = "{{purple}}", bg = "{{surface}}" }
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+[mode]
+normal_main = { fg = "{{bg}}", bg = "{{purple}}", bold = true }
+normal_alt  = { fg = "{{purple}}", bg = "{{surface}}" }
+select_main = { fg = "{{bg}}", bg = "{{pink}}", bold = true }
+select_alt  = { fg = "{{pink}}", bg = "{{surface}}" }
+unset_main  = { fg = "{{bg}}", bg = "{{orange}}", bold = true }
+unset_alt   = { fg = "{{orange}}", bg = "{{surface}}" }
+
+[status]
+overall    = { fg = "{{comment}}" }
+sep_left   = { open = "", close = "" }
+sep_right  = { open = "", close = "" }
+perm_sep   = { fg = "{{comment}}" }
+perm_type  = { fg = "{{purple}}" }
+perm_read  = { fg = "{{yellow}}" }
+perm_write = { fg = "{{red}}" }
+perm_exec  = { fg = "{{green}}" }
+progress_label  = { fg = "{{fg}}", bold = true }
+progress_normal = { fg = "{{purple}}", bg = "{{surface}}" }
+progress_error  = { fg = "{{red}}", bg = "{{surface}}" }
+
+[which]
+cols            = 3
+mask            = { bg = "{{bg}}" }
+cand            = { fg = "{{pink}}" }
+rest            = { fg = "{{comment}}" }
+desc            = { fg = "{{fg}}" }
+separator       = "  "
+separator_style = { fg = "{{comment}}" }
+
+[confirm]
+border  = { fg = "{{purple}}" }
+title   = { fg = "{{purple}}" }
+btn_yes = { fg = "{{bg}}", bg = "{{pink}}" }
+btn_no  = {}
+
+[spot]
+border   = { fg = "{{purple}}" }
+title    = { fg = "{{purple}}" }
+tbl_col  = { fg = "{{cyan}}" }
+tbl_cell = { fg = "{{pink}}", bg = "{{selection}}" }
+
+[notify]
+title_info  = { fg = "{{green}}" }
+title_warn  = { fg = "{{yellow}}" }
+title_error = { fg = "{{red}}" }
+
+[pick]
+border   = { fg = "{{purple}}" }
+active   = { fg = "{{pink}}", bold = true }
+inactive = {}
+
+[input]
+border   = { fg = "{{purple}}" }
+title    = {}
+value    = {}
+selected = { bg = "{{selection}}" }
+
+[cmp]
+border   = { fg = "{{purple}}" }
+active   = { fg = "{{pink}}", bg = "{{selection}}" }
+inactive = {}
+
+[tasks]
+border  = { fg = "{{purple}}" }
+title   = {}
+hovered = { fg = "{{pink}}", bold = true }
+
+[help]
+border  = { fg = "{{purple}}" }
+chord   = { fg = "{{pink}}" }
+action  = { fg = "{{cyan}}" }
+hovered = { bg = "{{selection}}", bold = true }
+
+[filetype]
+rules = [
+	{ mime = "**/image/*", fg = "{{pink}}" },
+	{ mime = "**/{audio,video}/*", fg = "{{pink}}" },
+	{ mime = "**/application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "{{orange}}" },
+	{ mime = "**/application/{pdf,doc,rtf}", fg = "{{yellow}}" },
+	{ mime = "vfs/{absent,stale}", fg = "{{comment}}" },
+	{ url = "*", is = "orphan", fg = "{{red}}" },
+	{ url = "*", is = "link", fg = "{{cyan}}" },
+	{ url = "*", is = "exec", fg = "{{green}}" },
+	{ url = "*", fg = "{{fg}}" },
+	{ url = "*/", fg = "{{purple}}", bold = true },
+]
+
+# Folder and link icons in the file colours (yazi's own are blue); file icons keep their colours
+[icon]
+prepend_conds = [
+	{ if = "dir", text = "", fg = "{{purple}}" },
+	{ if = "link", text = "", fg = "{{cyan}}" },
+	{ if = "orphan", text = "", fg = "{{red}}" },
+]
