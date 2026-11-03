@@ -1,6 +1,6 @@
 [project]
 name = "dracula-nocturne"
-version = "0.1.0"
+version = "0.1.1"
 description = "Dracula on near-black: one palette, themes for terminals, editors, prompts and the browser."
 readme = "README.md"
 license = "MIT"
